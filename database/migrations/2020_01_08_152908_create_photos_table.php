@@ -18,7 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('name');
             $table->enum('status', ['Draft', 'Published']);	
             $table->text('captions');
-            $table->timestamp('published_at');	
+            $table->timestamp('published_at')->nullable();	
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
